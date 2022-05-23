@@ -1,0 +1,210 @@
+:root {
+   /* color */
+   --basic : #ffffff;
+   --sc-basic : #aaaaaa;
+   --black : #1d1d1d;
+   --main : #1cabe2;
+}
+
+/* tablet view */
+@media screen and (max-width: 850px) {
+   /* navbar */
+   nav.scroll {
+      background-color: var(--black);
+      box-shadow: 0 3px 6px rgba(0,0,0,.2);
+   }
+
+   nav a {
+      color: var(--basic) !important;
+   }
+   
+   .navigasi {
+      width: 75%;
+   }
+   /* end navbar */
+   
+   /* jumbotron */
+   .jumbotron {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      color: var(--basic);
+      animation: preview 8s ease-in-out alternate infinite;
+   }
+
+   .jumbotron .row {
+      position: relative;
+      z-index: 1;
+   }
+
+   .jumbotron span.background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.486);
+   }
+   
+   @keyframes preview {
+      0% {
+         background: linear-gradient(180deg, rgba(255,255,255,0) 11%, rgba(17,17,17,0.8939950980392157) 80%), url(../img/photo-1.jpeg)
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+      }
+      25% {
+         background: url(../img/photo-2.jpeg);
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+      }
+      50% {
+         background: url(../img/photo-3.jpeg);
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+      }
+      100% {
+         background: url(../img/photo-4.jpeg);
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+      }
+   }
+
+   .jumbotron .slide {
+      display: none;
+   }
+
+   /* end jumbotron */
+
+   /* team */
+
+   .name-desc .profesi {
+      font-size: 1.2vmax;
+   }
+
+}
+
+
+
+
+/* smartphone view */
+@media screen and (max-width: 428px) {
+   /* navbar */
+   .navigasi {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2em;
+      overflow: hidden;
+      background-color: rgba(0,0,0,.4);
+      transform: translateY(-100%);
+      transition: all .3s ease-in-out;
+   }
+
+   .navigasi.show {
+      transform: translateY(0);
+   }
+
+   .navigasi ul {
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+      height: 80vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      padding: 1em 2em;
+      border-radius: 1em;
+      background-color: var(--basic);
+      transition: all .5s ease-in-out .2s;
+   }
+
+   .navigasi ul.show {
+      opacity: 1;
+   }
+
+   .navigasi ul li {
+      margin: 10px 0;
+      padding: 1em;
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+   }
+
+   .navigasi ul li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: var(--black) !important;
+   }
+
+   .navigasi ul li:last-child {
+      text-align: center;
+   }
+
+   .navigasi ul li:hover {
+      background-color: var(--sc-basic);
+   }
+
+   .ham-btn {
+      display: flex;
+   }
+
+   .ham-btn span {
+      background-color: var(--basic);
+   }
+   /* end nav */
+
+   /* jumbotron */
+   .jumbotron {
+      height: 100vh;
+   }
+
+   .jumbotron .row {
+      text-align: center;
+      justify-content: center;
+   }
+
+   .headline {
+      font-size: 2vmax !important;
+   }
+
+   .headline h1 {
+      font-size: 3.5vmax !important;
+   }
+
+   .headline .btn {
+      justify-content: center;
+   }
+
+   /* end jumbotron */
+
+   /* team */
+
+   .card-profile figure {
+      flex-direction: column;
+      justify-content: space-around;
+   }
+
+   .name-desc {
+      margin-top: 10px;
+   }
+
+   .name-desc .profesi {
+      font-size: 1.8vmax;
+   }
+
+   .personal-socmed {
+      align-self: end;
+   }
+}
